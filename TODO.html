@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >Todo List</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="todo.css">
 </head>
 <body>
+
     <div class="d_container">
-        <h2 style=>Todo List</h2>
-        <div class="input">
+        <h2>Todo List</h2>
+        <div class="input-section">
             <input class="in" type="text" id="taskInput" placeholder="Enter a new task">
             <button class="addbutton" onclick="addTask()">Add</button>
         </div>
@@ -18,23 +19,24 @@
 
     <script>
         function addTask() {
-            const taskInput = document.getElementById("taskInput");
-            const taskText = taskInput.value.trim(); 
-        if (taskText ==="") {
-            alert("Please enter a valid task!"); 
-            return; 
-         }
+            const taskText = document.getElementById("taskInput").value.trim();
+
+        if (taskText === "") {
+        alert("Please enter a valid task!");
+        return;
+        }
             const taskItem = document.createElement("li");
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.onclick=()=>taskItem.remove();
-
             const taskLabel = document.createElement("span");
             taskLabel.innerText = taskText;
+
             const deleteButton = document.createElement("button");
             deleteButton.innerText = "Delete";
-            deleteButton.className = "delete-button";
+            deleteButton.className = "deletebutton";
             deleteButton.onclick = () => taskItem.remove();
+            
             taskItem.append(checkbox, taskLabel, deleteButton);
             document.getElementById("taskList").appendChild(taskItem);
             document.getElementById("taskInput").value = "";
