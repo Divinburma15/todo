@@ -50,7 +50,7 @@ li span {
     margin-left: 4px;
 }
 
-.delete-button {
+.deletebutton {
     background: red;
     color: white;
     border: none;
@@ -58,7 +58,7 @@ li span {
     border-radius: 5px;
     cursor: pointer;
 }
-.delete-button:hover{
+.deletebutton:hover{
     background-color:black;
     color: red;
 }
